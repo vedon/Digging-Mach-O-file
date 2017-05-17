@@ -24,15 +24,18 @@ __DATA segment 与 __TEXT  的偏移是固定的，仅接着__TEXT 数据之后�
 我们打开terminal ,然后cd 到/System/Library/Frameworks/AppKit.framework 目录下
 
 > * 查看AppKit 的Mach header 信息: otool -h AppKit
+
 ![](./Screen Shot 2015-07-09 at 2.59.53 PM.png)
 cputype 和 cpusubtype 规定了这个可执行文件能够运行在哪些目标架构上,ncmds 指load commands  的数量，sizeofcmds 指 load commands 的大小。
 
 > * 查看 AppKit 的load commands信息: otool -l AppKit
+
 ![](./Screen Shot 2015-07-09 at 3.00.23 PM.png)
 嫌弃这个命令看到的东西太详细，可以用 size  来替换。size -m -x -l AppKit
 ![](./Screen Shot 2015-07-09 at 4.47.05 PM.png)
 
 > * 查看所有动态加载的库: otool -L AppKit
+
 ![](./Screen Shot 2015-07-09 at 3.01.55 PM.png)
 
 > * 查看Mach-O 文件所有的符号：
@@ -45,6 +48,7 @@ nm -a AppKit
 看这些太痛苦了，不如来点objc 的。使用[class-dump](https://github.com/nygard/class-dump),把 class-dump 拉到/usr/local/bin 目录下，这样在terminal 就可以使用了，使用class-dump 可以查看库的头文件。
 
 > * class-dump AppKit
+
 > ![](./Screen Shot 2015-07-09 at 3.13.44 PM.png)
 > 
 不看一下汇编代码，都显示不出自己高大上，otool -tV  加Mach-O 文件，可以查看里面的汇编代码。（p.s  小心刷屏）
