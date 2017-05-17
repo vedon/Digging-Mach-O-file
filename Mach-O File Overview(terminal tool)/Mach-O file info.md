@@ -1,8 +1,8 @@
-#Mach-O
+# Mach-O
 
 [Mach-O](https://zh.wikipedia.org/wiki/Mach-O)为Mach Object文件格式的缩写，它是一种用于可执行文件，目标代码，动态库，内核转储的文件格式。作为a.out格式的替代，Mach-O提供了更强的扩展性，并提升了符号表中信息的访问速度。
 
-##Mach-O 文件结构
+## Mach-O 文件结构
 [![](./Mach-O.png)](http://www.cilinder.be/docs/next/NeXTStep/3.3/nd/DevTools/14_MachO/MachO.htmld/index.html)
 
 
@@ -51,7 +51,7 @@ nm -a AppKit
 
 ![](./Screen Shot 2015-07-09 at 3.21.57 PM.png)
 
-##Mach-O 文件的生成
+## Mach-O 文件的生成
 关于如何从我们的.m 文件生成一个可执行文件，这里有一篇很好的[博客](http://www.objc.io/issues/6-build-tools/mach-o-executables/),相信你看了之后，受益匪浅呀！
 
 
